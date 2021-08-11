@@ -3,7 +3,7 @@ var router= express.Router();
 
 var authRouter= require('./auth');
 
-router.use('/auth',authRouter)
+router.use('/auth',authRouter);
 router.get('/home',(req,res)=>{
     //console.log(req.session);
    if(req.session.email){
@@ -11,6 +11,5 @@ router.get('/home',(req,res)=>{
     else{
         res.redirect('/auth/signin')
     }
-   
 })
 module.exports= router;
