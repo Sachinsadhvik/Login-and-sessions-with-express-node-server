@@ -2,6 +2,7 @@ const express = require('express');
 var app = express();
 var main = require('./ROUTES/main');
 var session= require('express-session');
+const port= process.env.PORT || 5000;
 const MongoStore= require('connect-mongo')
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
@@ -19,7 +20,7 @@ app.use(session({
   }))
 app.set('views','VIEWS');
 app.set('view engine',"ejs");
-port= 5000 || process.env.PORT;
+
 
 app.use('/', main );
 
