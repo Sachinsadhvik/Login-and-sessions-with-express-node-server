@@ -34,11 +34,11 @@ const verifyUser= (UserDetails)=>{
             console.log("user",user[0].password,"userdetails",UserDetails);
            bcrypt.compare(UserDetails.password, user[0].password, function(err, result) {
             // result == true
-            if(!err){
+            if(result){
                 resolve(user[0]);
             } 
             else{
-                throw Error('please verify the details provided');
+               reject(user[0])
             }  
 
         });

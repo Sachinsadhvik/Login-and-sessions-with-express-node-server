@@ -5,7 +5,7 @@ var authRouter= require('./auth');
 
 router.use('/auth',authRouter);
 router.get('/home',(req,res)=>{
-    //console.log(req.session);
+   // console.log(req.session);
    if(req.session.email){
         res.render('home')}
     else{
